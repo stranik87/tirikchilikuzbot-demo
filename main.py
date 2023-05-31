@@ -1,6 +1,7 @@
 import time
-from .handlers import (
+from handlers import (
     get_last_update,
+    start,
 )
 
 
@@ -20,11 +21,28 @@ def main():
 
         # check if new update_id is not equal to last update_id
         if new_update_id != last_update_id:
-            # do something
-            pass
+            # get new message
+            new_message = new_update['message']
+            
+            # get user chat_id
+            chat_id = new_message['chat']['id']
+            
+            # check if new message has text
+            if 'text' in new_message.keys():
+                # get new message text
+                text = new_message['text']
 
-        # set last update_id to new update_id
-        last_update_id = new_update_id
+                # check if new message text is equal to '/start'
+                if text == '/start':
+
+                    # get new message first_name
+                    first_name = new_message['chat']['first_name']
+
+                    # send start message
+                    start(chat_id, first_name)
+
+            # set last update_id to new update_id
+            last_update_id = new_update_id
 
         # sleep for 1 second
         time.sleep(1)
