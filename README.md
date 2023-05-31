@@ -4,7 +4,7 @@ This is a demo project for telegram bot
 
 ## projecrt file structure
 
-```json
+```
 ├── README.md
 ├── main.py
 ├── settings.py
