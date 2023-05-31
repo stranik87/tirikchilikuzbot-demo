@@ -3,6 +3,9 @@ from settings import URL
 from messages import (
     START_MESSAGE,
 )
+from buttons import (
+    START_KEYBOARD,
+)
 
 
 def get_last_update():
@@ -17,5 +20,9 @@ def start(chat_id, first_name):
         'chat_id': chat_id,
         'text': START_MESSAGE.format(first_name),
         'parse_mode': 'HTML',
+        'reply_markup': {
+            'keyboard': START_KEYBOARD,
+            'resize_keyboard': True
+        }
     }
-    requests.get(url, data)
+    requests.post(url, json=data)
