@@ -2,6 +2,10 @@ import time
 from handlers import (
     get_last_update,
     start,
+    products,
+    basket,
+    order,
+    troll_uz,
 )
 
 
@@ -33,13 +37,30 @@ def main():
                 text = new_message['text']
 
                 # check if new message text is equal to '/start'
-                if text == '/start':
+                if text == '/start' or text == "🏠 Bosh menyu": 
 
                     # get new message first_name
                     first_name = new_message['chat']['first_name']
 
                     # send start message
+                
+                    
                     start(chat_id, first_name)
+                    
+                elif text == '🔥 Mahsulotlar':
+                    products(chat_id)
+                
+                elif text == "📥 Savat":
+                    basket(chat_id)
+                    
+                elif text == '🚖 Buyurtma berish':
+                    order(chat_id)
+                
+                elif text == 'Troll.uz':
+                    if text == "⬅️ Ortga":
+                        troll_uz(chat_id)
+                    troll_uz(chat_id)
+                    
 
             # set last update_id to new update_id
             last_update_id = new_update_id
