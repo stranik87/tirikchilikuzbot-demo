@@ -10,6 +10,8 @@ from handlers import (
     xeshteg,
     konst_product,
     go_uz,
+    partners_text,
+    info,
 )
 
 
@@ -51,6 +53,9 @@ def main():
                     
                     start(chat_id, first_name)
                     
+                elif text == '💼 Hamkorlik':
+                    partners_text(chat_id)
+                    
                 elif text == '🔥 Mahsulotlar':
                     products(chat_id)
                 
@@ -74,6 +79,9 @@ def main():
                     
                 elif text == 'Go Uz':
                     go_uz(chat_id)
+                    
+                elif text == '☎️ Kontaktlar':
+                    info(chat_id)
                     
 
             # set last update_id to new update_id

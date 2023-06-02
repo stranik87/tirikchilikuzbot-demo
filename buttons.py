@@ -49,3 +49,9 @@ GO_UZ_KEYBOARD = [
     ["Futbolkalar"],
     ["🏠 Bosh menyu"]
 ]
+
+INFO_KEYBOARD = [
+    ['✍️ Izoh qoldirish'],
+    ['🚀 Yetkazib berish shartlari','☎️ Kontaktlar'],
+    ["🏠 Bosh menyu"]
+]

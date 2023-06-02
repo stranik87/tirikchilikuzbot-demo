@@ -2,6 +2,7 @@ import requests
 from settings import URL
 from messages import (
     START_MESSAGE,
+    PARTNERS_MESSAGE,
     
     
 )
@@ -13,6 +14,8 @@ from buttons import (
     XESHTEG_KEYBOARD,
     KONSTA_KEYBOARD,
     GO_UZ_KEYBOARD,
+    INFO_KEYBOARD,
+    
 )
 
 
@@ -27,6 +30,19 @@ def start(chat_id, first_name):
     data = {
         'chat_id': chat_id,
         'text': START_MESSAGE.format(first_name),
+        'parse_mode': 'HTML',
+        'reply_markup': {
+            'keyboard': START_KEYBOARD,
+            'resize_keyboard': True
+        }
+    }
+    requests.post(url, json=data)
+    
+def partners_text(chat_id):
+    url = URL + 'sendMessage'
+    data = {
+        'chat_id': chat_id,
+        'text': PARTNERS_MESSAGE,
         'parse_mode': 'HTML',
         'reply_markup': {
             'keyboard': START_KEYBOARD,
@@ -131,3 +147,16 @@ def go_uz(chat_id):
         }
     }
     requests.post(url,json=data)
+    
+def info(chat_id):
+    url = URL + 'sendMessage'
+    data = {
+        'chat_id':chat_id,
+        'text':"Teskari aloqa uchun:@tirik_chilik",
+
+        'reply_markup':{
+            'keyboard':INFO_KEYBOARD,
+            'resize_keyboard':True
+        }
+    }
+    requests.post(url, json=data)
