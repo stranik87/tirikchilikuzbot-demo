@@ -6,6 +6,10 @@ from handlers import (
     basket,
     order,
     troll_uz,
+    tim_ali,
+    xeshteg,
+    konst_product,
+    go_uz,
 )
 
 
@@ -57,9 +61,19 @@ def main():
                     order(chat_id)
                 
                 elif text == 'Troll.uz':
-                    if text == "⬅️ Ortga":
-                        troll_uz(chat_id)
                     troll_uz(chat_id)
+                    
+                elif text == 'Timur Alixonov':
+                    tim_ali(chat_id)
+                    
+                elif text == '#ЧЗХ':
+                    xeshteg(chat_id)
+                    
+                elif text == 'Konsta':
+                    konst_product(chat_id)
+                    
+                elif text == 'Go Uz':
+                    go_uz(chat_id)
                     
 
             # set last update_id to new update_id

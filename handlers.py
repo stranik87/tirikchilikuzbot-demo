@@ -9,6 +9,10 @@ from buttons import (
     START_KEYBOARD,
     PRODUCTS_KEYBOARD,
     TROLL_MENU_KEYBOARD,
+    TIMUR_KEYBOARD,
+    XESHTEG_KEYBOARD,
+    KONSTA_KEYBOARD,
+    GO_UZ_KEYBOARD,
 )
 
 
@@ -74,5 +78,56 @@ def troll_uz(chat_id):
             'resize_keyboard':True
         }
         
+    }
+    requests.post(url,json=data)
+    
+def tim_ali(chat_id):
+    url = URL + 'sendMessage'
+    
+    data = {
+        'chat_id':chat_id,
+        'text': "Bo'limni tanlang👇🏻",
+        'reply_markup':{
+        'keyboard':TIMUR_KEYBOARD,
+        'resize_keyboard':True
+        }
+    }
+    requests.post(url,json=data)
+def xeshteg(chat_id):
+    url = URL + 'sendMessage'
+    
+    data = {
+        'chat_id':chat_id,
+        'text': "Mahsulotni tanlang 👇🏻",
+        'reply_markup':{
+        'keyboard':XESHTEG_KEYBOARD,
+        'resize_keyboard':True
+        }
+    }
+    requests.post(url,json=data)
+    
+def konst_product(chat_id):
+    url = URL + 'sendMessage'
+    
+    data = {
+        'chat_id':chat_id,
+        'text': "Bo'limni tanlang👇🏻",
+        'reply_markup':{
+        'keyboard':KONSTA_KEYBOARD,
+        'resize_keyboard':True
+        }
+    }
+    requests.post(url,json=data)
+    
+def go_uz(chat_id):
+    url = URL + 'sendMessage'
+    
+    data = {
+        'chat_id':chat_id,
+        'text': "Bo'limni tanlang👇🏻",
+        'reply_markup':{
+        'keyboard':GO_UZ_KEYBOARD,
+        'resize_keyboard':True
+        }
     }
     requests.post(url,json=data)
