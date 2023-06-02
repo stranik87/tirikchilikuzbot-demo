@@ -55,3 +55,7 @@ INFO_KEYBOARD = [
     ['🚀 Yetkazib berish shartlari','☎️ Kontaktlar'],
     ["🏠 Bosh menyu"]
 ]
+
+PET_KEYBOARD = [
+    ['🐶']
+]

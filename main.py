@@ -12,6 +12,7 @@ from handlers import (
     go_uz,
     partners_text,
     info,
+    pet,
 )
 
 
@@ -82,6 +83,9 @@ def main():
                     
                 elif text == '☎️ Kontaktlar':
                     info(chat_id)
+                    
+                elif text == '/pets' or '🐶':
+                    pet(chat_id)
                     
 
             # set last update_id to new update_id

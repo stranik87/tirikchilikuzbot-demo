@@ -15,6 +15,7 @@ from buttons import (
     KONSTA_KEYBOARD,
     GO_UZ_KEYBOARD,
     INFO_KEYBOARD,
+    PET_KEYBOARD,
     
 )
 
@@ -156,6 +157,22 @@ def info(chat_id):
 
         'reply_markup':{
             'keyboard':INFO_KEYBOARD,
+            'resize_keyboard':True
+        }
+    }
+    requests.post(url, json=data)
+    
+def pet(chat_id):
+    r = requests.get('https://random.dog/woof.json')
+    img_url = r.json()['url']
+    
+    url = URL +  'sendPhoto'
+    
+    data = {
+        'chat_id': chat_id,
+        'photo': img_url,
+        'reply_markup':{
+            'keyboard':PET_KEYBOARD,
             'resize_keyboard':True
         }
     }
